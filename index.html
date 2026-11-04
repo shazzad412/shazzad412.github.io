@@ -14,11 +14,14 @@ body{font-family:Meiryo,sans-serif;background:#f5f7fa}
 </style>
 </head>
 <body>
+
 <div class="hero">
 <img src="https://github.com/shazzad412.png" class="img">
 <h1 class="mt-3">HOSSAIN MOHAMMAD SHAZZAD</h1>
 <p>シャザッド・ホサイン | PHPエンジニア | 新潟市 | JLPT N3</p>
 <a href="#contact" class="btn btn-light btn-sm mt-2">お問い合わせ</a>
+<a href="rirekisho.html" class="btn btn-warning btn-sm mt-2 ms-1">履歴書</a>
+<a href="Shokumu.html" class="btn btn-info btn-sm mt-2 ms-1 text-white">職務経歴書</a>
 </div>
 
 <div class="container my-5">
@@ -27,7 +30,7 @@ body{font-family:Meiryo,sans-serif;background:#f5f7fa}
 <p>Hello, I am <b>HOSSAIN MOHAMMAD SHAZZAD</b> from Niigata.<br>
 <b>PHP / MySQL / Fudosan System Developer</b><br>
 Ex Takashin Company (CAD) - Word/Excel/CAD office work.<br>
-ICA Japanese School Ikebukuro Tokyo 2022 → Joho Forum Senmon Gakko Niigata.<br>
+ICA Japanese School Ikebukuro Tokyo 2022 → Joho Forum Semmon Gakko Niigata.<br>
 JLPT N3. Diploma 2017 Bangladesh.</p>
 </div>
 
@@ -37,8 +40,8 @@ JLPT N3. Diploma 2017 Bangladesh.</p>
 <div class="card p-3 mb-4">
 <ul class="mb-0">
 <li>2017: Diploma Bangladesh</li>
-<li>2022: ICA Kokusaikaiwa Gakuin, Ikebukuro, Tokyo</li>
-<li>2024: Joho Forum Senmon Gakko, Niigata</li>
+<li>2022: ICA Kokusai Kaiwa Gakuin, Ikebukuro, Tokyo</li>
+<li>2024: Joho Forum Semmon Gakko, Niigata</li>
 <li>Takashin Co. - Official work - Word/Excel/CAD</li>
 <li>JLPT N3</li>
 </ul>
@@ -62,6 +65,8 @@ JLPT N3. Diploma 2017 Bangladesh.</p>
 <p>
 <a href="tel:07091331996" class="btn btn-success btn-sm">Call</a>
 <a href="mailto:mohammadshazzadhossain136@gmail.com" class="btn btn-primary btn-sm">Email</a>
+<a href="rirekisho.html" class="btn btn-warning btn-sm">履歴書</a>
+<a href="Shokumu.html" class="btn btn-dark btn-sm">職務経歴書</a>
 </p>
 </div>
 </div>
@@ -72,12 +77,12 @@ JLPT N3. Diploma 2017 Bangladesh.</p>
 fetch('https://api.github.com/users/shazzad412/repos?sort=updated&per_page=50')
 .then(r=>r.json())
 .then(data=>{
-  let h='';
-  data.forEach(repo=>{
-    if(repo.name=='shazzad412.github.io') return;
-    h+=`<div class="card p-3 mb-2"><b>${repo.name}</b><br><small>${repo.description||''}</small><br><a href="${repo.html_url}" target="_blank">View →</a></div>`;
-  });
-  document.getElementById('repos').innerHTML=h;
+let h='';
+data.forEach(repo=>{
+if(repo.name=='shazzad412.github.io') return;
+h+=`<div class="card p-3 mb-2"><b><a href="${repo.html_url}" target="_blank">${repo.name}</a></b><br><small>${repo.description||''}</small><br><span class="badge bg-primary">${repo.language||''}</span></div>`;
+});
+document.getElementById('repos').innerHTML=h;
 });
 </script>
 </body>
